@@ -1,49 +1,112 @@
+:root {
+    /* Color Variables */
+    --background-color: #f5f5f5;
+    --primary-color: #606060;
+    --primary-hover-color: #2980b9;
+    --text-color: #333;
+    --border-color: #ccc;
+    --label-color: #555;
+    --error-color: #e74c3c;
+  
+    /* Font Variables */
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --font-size: 16px;
+  
+    /* Spacing Variables */
+    --padding: 25px;
+    --border-radius: 8px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: var(--font-family);
+    font-size: var(--font-size);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
 }
 
 .container {
+    width: 90%;
+    max-width: 500px;
+    padding: var(--padding);
     background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    width: 300px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
-    font-size: 24px;
+    color: var(--primary-color);
+    font-size: 2rem;
+    font-weight: 400;
     margin-bottom: 20px;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+label {
+    color: var(--label-color);
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
 }
 
 #text-input {
     width: 100%;
-    padding: 10px;
+    padding: var(--padding);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    font-size: 1rem;
     margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
 }
 
 #check-btn {
-    padding: 10px 15px;
-    background-color: #28a745;
+    width: 100%;
+    padding: var(--padding);
+    background-color: var(--primary-color);
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
     cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
 }
 
 #check-btn:hover {
-    background-color: #218838;
+    background-color: var(--primary-hover-color);
 }
 
 #result {
     margin-top: 15px;
-    font-size: 18px;
+    padding: var(--padding);
+    background-color: white;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    min-height: 40px;
+}
+
+#error-message {
+    color: var(--error-color);
+    font-size: 0.9rem;
+    margin-top: 10px;
+    text-align: center;
 }
